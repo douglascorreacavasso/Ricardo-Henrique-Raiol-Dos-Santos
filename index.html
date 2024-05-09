@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fundo Animado com Colunas</title>
+<title>Fundo Animado com Colunas e Conteúdo Dinâmico</title>
 <style>
  body, html {
-  height: 100%;
+  min-height: 100vh; /* Altura mínima para garantir que o conteúdo seja pelo menos tão alto quanto a tela */
   margin: 0;
-  overflow: hidden;
+  overflow: auto; /* Permite deslizar se o conteúdo for maior que a tela */
  }
 
  .background {
@@ -37,21 +37,20 @@
 
  body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   background-repeat: repeat;
   background-size: cover;
   background-position: center;
  }
 
  .container {
-  max-width: 50%; /* Largura inicial */
+  width: 90%;
+  max-width: 800px;
   padding: 20px;
   text-align: left;
+  overflow: auto; /* Permite deslizar dentro do container se necessário */
  }
 
  .content {
@@ -60,16 +59,29 @@
   padding: 20px;
   text-align: center;
   color: black;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centraliza horizontalmente */
+  overflow: auto; /* Permite deslizar dentro do conteúdo se necessário */
  }
 
- @media (max-width: 767px) {
+ .content hr {
+  border: none;
+  border-top: 1px solid grey;
+  margin: 20px 0;
+ }
+
+ @media (max-width: 767px) { /* Consulta de mídia para dispositivos móveis */
   .container {
-   max-width: 100%; /* Largura total em dispositivos móveis */
+    width: 98%;
+padding:2%
+    
   }
+.content{
+padding: 1%
+}
+ }
+/* Imagens responsivas */
+ img {
+  max-width: 100%;
+  height: auto;
  }
 </style>
 </head>
