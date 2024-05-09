@@ -65,6 +65,26 @@
     color: black; /* Cor do texto */
     overflow: auto;
   }
+
+@media (min-width: 768px) {
+            .container {
+                max-width: 800px; /* Largura máxima do container */
+                margin: 0 auto; /* Centralizar o container na tela */
+            }
+            .experiencia-container {
+                display: flex; /* Organizar os botões em linha */
+                flex-wrap: wrap; /* Permitir que os botões quebrem em várias linhas */
+                justify-content: space-between; /* Distribuir os botões com espaço entre eles */
+            }
+            .btn-experiencia {
+                margin: 10px; /* Espaçamento entre os botões */
+            }
+            #empre1, #empre2, #empre3 {
+                display: none; /* Ocultar as divs de conteúdo inicialmente */
+                height: 200px; /* Altura inicial (ajuste de acordo com o conteúdo) */
+            }
+        }
+
 </style>
 </head>
 <body>
