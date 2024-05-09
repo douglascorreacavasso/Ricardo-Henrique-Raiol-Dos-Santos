@@ -5,158 +5,134 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fundo Animado com Colunas</title>
 <style>
-  body, html {
-    height: 100%;
-    margin: 0;
-    overflow: hidden;
-   /* background-color: #f5f5f5;  Cor de fundo */
+ body, html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+ }
+
+ .background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  display: flex;
+  justify-content: space-around;
+ }
+
+ .column {
+  background: grey;
+  width: 10%;
+  height: 100%;
+  opacity: 0.5;
+  animation: fadeInOut 5s infinite;
+ }
+
+ @keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.5; }
+ }
+
+ body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+ }
+
+ .container {
+  max-width: 50%; /* Largura inicial */
+  padding: 20px;
+  text-align: left;
+ }
+
+ .content {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  text-align: center;
+  color: black;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente */
+ }
+
+ @media (max-width: 767px) {
+  .container {
+   max-width: 100%; /* Largura total em dispositivos móveis */
   }
-
-  .background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    display: flex;
-    justify-content: space-around; /* Alterado para space-around */
-  }
-
-  .column {
-    background: grey; /* Alterado para uma cor sólida para corresponder ao segundo site */
-    width: 10%; /* Ajustado para corresponder ao segundo site */
-    height: 100%;
-    opacity: 0.5;
-    animation: fadeInOut 5s infinite;
-  }
-
-  @keyframes fadeInOut {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 0.5; }
-  }
-
-        /* Seu CSS personalizado aqui */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-           /* background-image: url('FUNDO.jpg');  Caminho para o arquivo de imagem de fundo */
-            background-repeat: repeat; /* Repetir a imagem em todas as direções */
-            background-size: cover; /* Cobertura total da tela */
-            background-position: center; /* Posicionar a imagem no centro */
-            display: flex;
-            flex-direction: column; /* Organizar o conteúdo em coluna */
-            align-items: center; /* Centralizar o conteúdo na horizontal */
-            justify-content: center; /* Centralizar o conteúdo na vertical */
-            min-height: 100vh; /* Altura mínima da página para garantir centralização */
-        }
-        .container {
-            
-            max-width: 100%; /* O container ocupa toda a largura da tela */
-            padding: 20px; /* Aumentar o padding para telas menores */
-            text-align: left;
-        }
-  .content {
-    position: relative;
-    z-index: 1;
-    padding: 20px;
-    text-align: center;
-    color: black; /* Cor do texto */
-    overflow: auto;
-  }
-
-@media (min-width: 768px) {
-            .container {
-                max-width: 800px; /* Largura máxima do container */
-                margin: 0 auto; /* Centralizar o container na tela */
-            }
-            .experiencia-container {
-                display: flex; /* Organizar os botões em linha */
-                flex-wrap: wrap; /* Permitir que os botões quebrem em várias linhas */
-                justify-content: space-between; /* Distribuir os botões com espaço entre eles */
-            }
-            .btn-experiencia {
-                margin: 10px; /* Espaçamento entre os botões */
-            }
-            #empre1, #empre2, #empre3 {
-                display: none; /* Ocultar as divs de conteúdo inicialmente */
-                height: 200px; /* Altura inicial (ajuste de acordo com o conteúdo) */
-            }
-        }
-
+ }
 </style>
 </head>
 <body>
 
-<div class="background" id="background">
-  <!-- As colunas serão criadas pelo JavaScript -->
-</div>
+<div class="background" id="background"></div>
 
-<div class="content"style=" height: 100%;width: 50%;">
-<div class="container"style=" height: 130%;">
-    <h1>Ricardo Henrique Raiol Dos Santos</h1>
-    <hr>       
-        <p>Curitiba – PR</p>
-        <p id="idade">Idade: </p>
-        <p>Inglês: Básico</p>
-        <p>Estado Civil: Solteiro</p>
-        <p>E-mail: raiol.santos3@gmail.com</p>
-        <p>Telefone: (41) 99709-6336 | (91) 99804-9467</p>
-    <hr>
-    <h3>PERFIL PROFISSIONAL</h3>
-    <p>Profissional com sólida formação técnica e experiência em atendimento ao cliente, gestão de tempo e procedimentos operacionais. Comprovada capacidade de trabalhar em ambientes de alta demanda, oferecendo suporte e assistência de qualidade. Busca oportunidade para contribuir com suas habilidades em um ambiente de varejo dinâmico.</p>
-    <hr>
-    <h3>DESTAQUES</h3>
-    <p>Excelente habilidade de comunicação e interação com o público.</p>
-        <p>Forte capacidade de organização e priorização de tarefas.</p>
-            <p>Adaptável e rápido no aprendizado de novas funções e ambientes.</p>
-    
-    <hr>
-    <h3>FORMAÇÃO</h3>
-    <p>Técnico em Enfermagem - Instituto de Educação Integrada Albert Einstein (2017 - 2019)</p>
-    
-    <hr>
-    <h3>QUALIFICAÇÕES E CURSOS</h3>
-    <p>Capacitação em atendimento ao cliente e administração de procedimentos.</p>
-    <p>Curso de Informática Básica; 80 h (2014)</p>
-    
-    <hr>
-    <h3>EXPERIÊNCIA PROFISSIONAL</h3>
-    <p><b>Assistente de Atendimento - HPSM Dr. Humberto Maradei Pereira (2020-2023)</b></p>
-    <p>- Atendimento ao cliente, gerenciamento de tempo e coordenação de tarefas diárias.</p>
-    <p><b>Assistente de Atendimento - Hospital MATER DEI Porto Dias (2019 - 2020)</b></p>
-    <p>- Fornecimento de assistência ao cliente e manutenção de operações eficientes.</p>
-    <p><b>Estágio - Assistente de Atendimento - UPA Dr. Nonato Sanova (2018 - 2019)</b></p>
-    <p>- Suporte ao cliente e desenvolvimento de habilidades práticas em ambiente supervisionado.</p>
-    
-</div>
+<div class="content">
+ <div class="container">
+  <h1>Ricardo Henrique Raiol Dos Santos</h1>
+  <hr>    
+  <p>Curitiba – PR</p>
+  <p id="idade">Idade: </p>
+  <p>Inglês: Básico</p>
+  <p>Estado Civil: Solteiro</p>
+  <p>E-mail: raiol.santos3@gmail.com</p>
+  <p>Telefone: (41) 99709-6336 | (91) 99804-9467</p>
+  <hr>
+  <h3>PERFIL PROFISSIONAL</h3>
+  <p>Profissional com sólida formação técnica e experiência em atendimento ao cliente, gestão de tempo e procedimentos operacionais. Comprovada capacidade de trabalhar em ambientes de alta demanda, oferecendo suporte e assistência de qualidade. Busca oportunidade para contribuir com suas habilidades em um ambiente de varejo dinâmico.</p>
+  <hr>
+  <h3>DESTAQUES</h3>
+  <p>Excelente habilidade de comunicação e interação com o público.</p>
+  <p>Forte capacidade de organização e priorização de tarefas.</p>
+  <p>Adaptável e rápido no aprendizado de novas funções e ambientes.</p>
+  <hr>
+  <h3>FORMAÇÃO</h3>
+  <p>Técnico em Enfermagem - Instituto de Educação Integrada Albert Einstein (2017 - 2019)</p>
+  <hr>
+  <h3>QUALIFICAÇÕES E CURSOS</h3>
+  <p>Capacitação em atendimento ao cliente e administração de procedimentos.</p>
+  <p>Curso de Informática Básica; 80 h (2014)</p>
+  <hr>
+  <h3>EXPERIÊNCIA PROFISSIONAL</h3>
+  <p><b>Assistente de Atendimento - HPSM Dr. Humberto Maradei Pereira (2020-2023)</b></p>
+  <p>- Atendimento ao cliente, gerenciamento de tempo e coordenação de tarefas diárias.</p>
+  <p><b>Assistente de Atendimento - Hospital MATER DEI Porto Dias (2019 - 2020)</b></p>
+  <p>- Fornecimento de assistência ao cliente e manutenção de operações eficientes.</p>
+  <p><b>Estágio - Assistente de Atendimento - UPA Dr. Nonato Sanova (2018 - 2019)</b></p>
+  <p>- Suporte ao cliente e desenvolvimento de habilidades práticas em ambiente supervisionado.</p>
+ </div>
 </div>
 
 <script>
-   // Calcula a idade com base no ano de nascimento
-   function calcularIdade(anoNascimento) {
-    var dataAtual = new Date();
-    var anoAtual = dataAtual.getFullYear();
-    var idade = anoAtual - anoNascimento;
-    return idade;
-  }
+ function calcularIdade(anoNascimento) {
+  var dataAtual = new Date();
+  var anoAtual = dataAtual.getFullYear();
+  var idade = anoAtual - anoNascimento;
+  return idade;
+ }
 
-  // Atualiza o elemento de idade com a idade atual
-  var idadeElement = document.getElementById('idade');
-  idadeElement.textContent += calcularIdade(1996);
+ var idadeElement = document.getElementById('idade');
+ idadeElement.textContent += calcularIdade(1996);
 
-  // Seleciona o elemento onde as colunas serão inseridas
-  var background = document.getElementById('background');
+ var background = document.getElementById('background');
 
-  // Cria 50 colunas com delay incrementado
-  for (var i = 0; i < 50; i++) {
-    var delay = i * 0.02;
-    var column = document.createElement('div');
-    column.className = 'column';
-    column.style.animationDelay = delay + 's';
-    background.appendChild(column);
-  }
+ for (var i = 0; i < 50; i++) {
+  var delay = i * 0.02;
+  var column = document.createElement('div');
+  column.className = 'column';
+  column.style.animationDelay = delay + 's';
+  background.appendChild(column);
+ }
 </script>
 
 </body>
